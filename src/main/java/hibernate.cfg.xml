@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql:///Linux</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Admin@123</property>
+
+        <!-- Optional Parameters -->
+
+        <!-- Prepare the query based on the mapping information for the underlying database -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Inform hibernate to display the query to the console it has generated internally -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Inform hibernate to display the query to the console it has generated internally in proper format -->
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Inform hibernate to create/update/drop the table -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping information for hibernate (ClassName -> TableName) (FieldName -> ColumnName) -->
+        <mapping class="in.ineuron.model.Student"/>
+    </session-factory>
+</hibernate-configuration>
